@@ -1,0 +1,7 @@
+wrapping around  (i % n)
+
+
+def reverse(str)
+  return str if str.length <= 1
+  return str[str.size-1] + reverse(str[0..-2])
+end
