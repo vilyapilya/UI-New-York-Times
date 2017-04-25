@@ -1,0 +1,8 @@
+<h1> All subs </h1>
+
+<% @subs.each do |sub| %>
+<br>
+  <h3> Title <%= link_to sub.title, sub_url(sub) %> </h3>
+  <h4> Description: <%= sub.description %> </h4>
+  <h4> Moderator: <%= sub.moderator.username %> </h4>
+<%end %>

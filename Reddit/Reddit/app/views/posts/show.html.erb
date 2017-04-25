@@ -1,0 +1,36 @@
+<%= @post.author.username %>
+<br>
+<h1> Post title: <%= @post.title %></h1>
+<br>
+<%= @post.content %>
+<%= @post.url %>
+<br>
+<h2> This is posted to these subs: </h2>
+<% @post.subs.each do |sub| %>
+  <h4> <%=sub.title %> </h4>
+<%end %>
+<br>
+
+<h1>Comments to the post </h1>
+  <% @post.comments.where(parent_id: nil).each do |c| %>
+  <h4> <%= c.author.username %>  said:</h4>
+  <ul>  <%= link_to c.content, comment_url(c) %>
+        <%c.children.each do |child|%>
+          <li> <%= child.content %></li>
+        <%end %>
+  </ul>
+<%end %>
+
+<h2> Add Comment </h2>
+
+<form action="<%=comments_url(post_id: @post.id)%>" method = "post">
+  <input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+
+  <input type = "hidden" name = "comment[post_id]" value = "<%=@post.id%>">
+  <label> Comment
+    <br>
+    <textarea name = "comment[content]"> type here </textarea>
+  </label>
+
+  <input type = "submit" value = "Add Comment">
+</form>

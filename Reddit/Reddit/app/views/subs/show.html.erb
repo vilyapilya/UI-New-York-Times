@@ -1,0 +1,11 @@
+<%= @sub.description %>
+<%= @sub.title %>
+<h3> All Posts </h3>
+<% @sub.posts.each do |post| %>
+<br>
+<h3> By <%= post.author.username %> </h3>
+<h5> Post title: <%= post.title %> </h5>
+<%= post.content %>
+<%end %>
+
+<%= link_to "New Post", new_post_url(sub: @sub.id) %>

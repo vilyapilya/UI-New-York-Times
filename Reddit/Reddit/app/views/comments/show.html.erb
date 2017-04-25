@@ -1,0 +1,16 @@
+<h3> Comments </h3>
+
+<%= @comment.content %>
+<h2> Add Reply </h2>
+
+<form action="<%=comments_url%>" method = "post">
+  <input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+  <input type = "hidden" name = "comment[parent_id]" value = "<%= @comment.id %>">
+  <input type = "hidden" name = "comment[post_id]" value = "<%= @comment.post.id %>">
+  <label> Comment
+    <br>
+    <textarea name = "comment[content]"> type here </textarea>
+  </label>
+
+  <input type = "submit" value = "Reply">
+</form>
