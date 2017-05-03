@@ -1,0 +1,39 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  position: fixed;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+}
+
+.left-nav > ul > li {
+  font-family: serif;
+  font-size: 16px;
+  text-transform: full-width;
+  font-weight: bold;
+  padding: 10px;
+
+}
+
+.right-nav > ul > li {
+    padding: 10px;
+}
+
+.right-nav > ul > li:last-of-type {
+  position: relative;
+  right: -900px;
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+  background-color: $lightest-gray;
+}
+
+.right-nav i {
+
+
+}

@@ -1,0 +1,54 @@
+/* Define application-wide selectors here!*/
+
+html {
+	position: relative;
+	height: 100%;
+}
+
+body {
+	width: 80%;
+	margin: 0 auto;
+	font-family: serif;
+	font-size: 12;
+}
+
+button {
+	background-color: lightskyblue;
+
+	// background-color: inherit;
+	// border-color: inherit;
+	// color: inherit;
+	// font-weight: bold;
+	// padding: inherit;
+	// border-radius: inherit;
+	// transition: inherit;
+	// font-family: fantasy;
+	// text-transform: capitalize;
+	// font-size: 10px;
+	// text-align: center;
+}
+
+button:hover {
+	background-color: lightskyblue;
+	// border-color:
+}
+
+/*
+	Header Rules
+*/
+
+hr {
+	border: 0;
+	height: 1px;
+	background-color: $light-gray;
+}
+
+.hr-top, .hr-bottom {
+	width: 100%;
+	margin: 0;
+}
+
+.hr-top {
+	height: 2px;
+	margin-bottom: 1px;
+}
